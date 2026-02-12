@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-family-geist-sans: "Geist Sans", sans-serif;
+  --font-family-geist-mono: "Geist Mono", monospace;
+  
+  /* Light mode colors */
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(9% 0.006 285.82);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(9% 0.006 285.82);
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(9% 0.006 285.82);
+  --color-primary: oklch(11.2% 0.019 285.82);
+  --color-primary-foreground: oklch(98% 0.004 285.82);
+  --color-secondary: oklch(96.1% 0.004 285.82);
+  --color-secondary-foreground: oklch(11.2% 0.019 285.82);
+  --color-muted: oklch(96.1% 0.004 285.82);
+  --color-muted-foreground: oklch(46.9% 0.016 285.82);
+  --color-accent: oklch(96.1% 0.004 285.82);
+  --color-accent-foreground: oklch(11.2% 0.019 285.82);
+  --color-destructive: oklch(60.2% 0.204 29.23);
+  --color-destructive-foreground: oklch(98% 0.004 285.82);
+  --color-border: oklch(91.4% 0.01 285.82);
+  --color-input: oklch(91.4% 0.01 285.82);
+  --color-ring: oklch(9% 0.006 285.82);
+  --radius: 0.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark mode - outside @theme block */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: oklch(9% 0.006 285.82);
+    --color-foreground: oklch(98% 0.004 285.82);
+    --color-card: oklch(9% 0.006 285.82);
+    --color-card-foreground: oklch(98% 0.004 285.82);
+    --color-popover: oklch(9% 0.006 285.82);
+    --color-popover-foreground: oklch(98% 0.004 285.82);
+    --color-primary: oklch(98% 0.004 285.82);
+    --color-primary-foreground: oklch(11.2% 0.019 285.82);
+    --color-secondary: oklch(17.5% 0.02 285.82);
+    --color-secondary-foreground: oklch(98% 0.004 285.82);
+    --color-muted: oklch(17.5% 0.02 285.82);
+    --color-muted-foreground: oklch(65.1% 0.02 285.82);
+    --color-accent: oklch(17.5% 0.02 285.82);
+    --color-accent-foreground: oklch(98% 0.004 285.82);
+    --color-destructive: oklch(30.6% 0.157 29.23);
+    --color-destructive-foreground: oklch(98% 0.004 285.82);
+    --color-border: oklch(17.5% 0.02 285.82);
+    --color-input: oklch(17.5% 0.02 285.82);
+    --color-ring: oklch(83.9% 0.027 285.82);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-family-geist-sans);
+  }
 }
