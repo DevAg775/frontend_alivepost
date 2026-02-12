@@ -1,29 +1,9 @@
-import {
-  Card,
- 
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { SignIn } from "@/components/Signin"
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="w-60">
-
-    <Card>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-  </CardHeader>
-  <CardContent>
-    <p>Card Content</p>
-  </CardContent>
-  <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter>
-</Card>
+    <div className="flex min-h-screen items-center justify-center">
+      <SignIn></SignIn>
     </div>
-  );
+  )
 }
